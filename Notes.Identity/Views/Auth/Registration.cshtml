@@ -1,0 +1,30 @@
+@model RegistrationViewModel
+
+<head>
+    <link href=@Url.Content("~/styles/app.css") rel="stylesheet" type="text/css"/>
+</head>
+
+<form asp-controller="Auth" asp-action="Registration" method="post" >
+    <input type="hidden" asp-for="ReturnUrl"/>
+    <div class="header">Sign Up</div>
+    <div class="block">
+        <label class="label">Username</label>
+        <input class="input" asp-for="Username"/>
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div class="block">
+        <label class="label">Password</label>
+        <input class="input" asp-for="Password"/>
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="block">
+        <label class="label">Confirm Password</label>
+        <input class="input" asp-for="ConfirmPassword"/>
+        <span asp-validation-for="ConfirmPassword"></span> 
+    </div>
+    <div class="block">
+        <button class="button" type="submit" >Sign Up</button>    
+    </div>
+    <a asp-controller="Auth" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl"
+       class="switch-button">Login</a>
+</form>
