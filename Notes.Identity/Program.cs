@@ -17,8 +17,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddLogging();
 
-builder.Services.AddControllersWithViews();
-
 var connectionString = builder.Configuration.GetValue<string>("DbConnection");
 
 builder.Services.AddDbContext<AuthDbContext>(
@@ -50,6 +48,8 @@ builder.Services.ConfigureApplicationCookie(
         cfg.LoginPath = "/Auth/Login";
         cfg.LogoutPath = "/Auth/Logout";
     });
+
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 

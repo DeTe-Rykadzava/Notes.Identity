@@ -76,9 +76,12 @@ public class AuthController : Controller
 
         var user = new AppUser()
         {
-            UserName = viewModel.Username
+            Email = viewModel.Username,
+            Username = viewModel.Username
         };
-
+        
+        user.UserName = viewModel.Username;
+        
         var result = await _userManager.CreateAsync(user, viewModel.Password);
 
         if (result.Succeeded)

@@ -4,6 +4,6 @@ namespace Notes.Identity.Models;
 
 public class AppUser : IdentityUser
 {
-    public string UserName { get; set; }
-    public string LastName { get; set; }
+    public string Username { get; set; } = "user";
+    public string Lastname { get; set; } = "user";
 }

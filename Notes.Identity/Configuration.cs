@@ -32,22 +32,22 @@ public class Configuration
         {
             new Client()
             {
-              ClientId  = "notes-web-api",
+              ClientId  = "notes-web-app",
               ClientName = "Notes Web",
               AllowedGrantTypes = GrantTypes.Code,
               RequirePkce = true,
               RequireClientSecret = false,
               RedirectUris =
               {
-                  "http://.../signin-oidc"
+                  "http://localhost:3000/signin-oidc"
               },
               AllowedCorsOrigins =
               {
-                  "http://..."
+                  "http://localhost:3000"
               },
               PostLogoutRedirectUris =
               {
-                  "http://.../signout-oidc"
+                  "http://localhost:3000/signout-oidc"
               },
               AllowedScopes =
               {
