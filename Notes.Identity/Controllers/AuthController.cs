@@ -50,7 +50,7 @@ public class AuthController : Controller
             viewModel.Password, false, false);
         if (result.Succeeded)
         {
-            return Redirect(viewModel.ReturnUrl);
+            return Redirect("http://localhost:5103"+viewModel.ReturnUrl);
         }
         
         ModelState.AddModelError(string.Empty, "Login failures");
@@ -87,7 +87,7 @@ public class AuthController : Controller
         if (result.Succeeded)
         {
             await _signInManager.SignInAsync(user, false);
-            return Redirect(viewModel.ReturnUrl);
+            return Redirect("http://localhost:5103"+viewModel.ReturnUrl);
         }
         
         ModelState.AddModelError(string.Empty, "Error occurred");

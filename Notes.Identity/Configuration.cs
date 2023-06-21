@@ -33,7 +33,6 @@ public class Configuration
             new Client()
             {
               ClientId  = "notes-web-app",
-              ClientName = "Notes Web",
               AllowedGrantTypes = GrantTypes.Code,
               RequirePkce = true,
               RequireClientSecret = false,

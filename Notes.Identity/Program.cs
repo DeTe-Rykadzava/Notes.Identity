@@ -21,6 +21,7 @@ var connectionString = builder.Configuration.GetValue<string>("DbConnection");
 
 builder.Services.AddDbContext<AuthDbContext>(
     opt => opt.UseSqlite(connectionString));
+builder.Services.AddCors();
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(
     cfg =>
